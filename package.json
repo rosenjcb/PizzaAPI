@@ -1,9 +1,12 @@
 {
-  "name": "_projectstarter",
+  "name": "pizza-api",
   "version": "1.0.0",
-  "description": "### ERD:",
+  "description": "A RESTful API for managing pizza orders and customers",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "seed:local": "node seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -21,5 +24,8 @@
     "redoc-express": "^2.1.0",
     "swagger-autogen": "^2.23.7",
     "swagger-ui-express": "^5.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
   }
 }

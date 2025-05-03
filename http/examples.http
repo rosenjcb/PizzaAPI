@@ -1,0 +1,60 @@
+@baseUrl = http://localhost:8000
+@username = admin@site.com
+@password = aA?123456
+@token = undefined
+@menuItemId = undefined 
+
+### Login and store JWT
+POST {{baseUrl}}/auth/login
+Content-Type: application/json
+
+{
+  "email": "{{username}}",
+  "password": "{{password}}"
+}
+
+> {% 
+    client.global.set("token", response.body.token);
+%}
+
+### Get all pizzas menu items
+GET {{baseUrl}}/pizzas
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Create a new pizza menu item
+POST {{baseUrl}}/pizzas
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Pepperoni",
+  "size": "Large",
+  "price": 12.99,
+  "toppings": ["pepperoni", "cheese"]
+}
+> {% 
+  client.global.set("menuItemId", response.body.data['_id']);
+%}
+
+### Get a single pizza menu item by ID
+GET {{baseUrl}}/pizzas/{{menuItemId}}
+Accept: application/json
+Authorization: Bearer {{token}}
+
+### Update a pizza by ID
+PUT {{baseUrl}}/pizzas/{{menuItemId}}
+Content-Type: application/json
+Authorization: Bearer {{token}}
+
+{
+  "name": "Veggie Deluxe",
+  "size": "Medium",
+  "price": 11.49,
+  "toppings": ["onion", "bell pepper", "mushrooms"]
+}
+
+### Delete a pizza by ID
+DELETE {{baseUrl}}/pizzas/{{menuItemId}}
+Accept: application/json
+Authorization: Bearer {{token}}

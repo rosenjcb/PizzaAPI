@@ -39,7 +39,6 @@ module.exports = {
 
         const data = await User.create(req.body)
 
-/
         sendMail(
             data.email, 
             'Welcome', 

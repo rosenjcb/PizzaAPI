@@ -67,9 +67,11 @@ module.exports = {
 
         const pizza = await Pizza.findOne({ _id: req.params.id }, { _id: 0, images: 1 })
   
-        for (let file of req.files) {
+        if(req.files) {
+            for (let file of req.files) {
 
-            pizza.images.push('/uploads/' + file.filename)
+                pizza.images.push('/uploads/' + file.filename)
+            }
         }
 
         req.body.images = pizza.images
