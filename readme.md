@@ -113,16 +113,12 @@ _Below is an example of how you can instruct your audience on installing and set
    EMAIL_PASS=ENTER YOUR password for sendMail
 
    ```
-4. Logs File
+4. Create Log Folder 
    ```sh
-   You can write:
    mkdir logs
    ```
-5. The project is ready, you can start using it now.
-   ```sh
-   You can run:
-   nodemon
-   ```
+5. The project is ready, you can start using it now. ```npm run dev```
+
 
 ### IMPORTANT NOTES ! 
 
