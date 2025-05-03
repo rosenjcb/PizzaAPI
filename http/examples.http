@@ -58,3 +58,8 @@ Authorization: Bearer {{token}}
 DELETE {{baseUrl}}/pizzas/{{menuItemId}}
 Accept: application/json
 Authorization: Bearer {{token}}
+
+### Get pizzas by search query 
+GET {{baseUrl}}/pizzas/search?toppings=pepperoni,cheese&maxPrice=200
+Accept: application/json
+Authorization: Bearer {{token}}
