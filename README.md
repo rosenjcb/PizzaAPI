@@ -117,7 +117,8 @@ _Below is an example of how you can instruct your audience on installing and set
    ```sh
    mkdir logs
    ```
-5. The project is ready, you can start using it now. ```npm run dev```
+5. The project is ready, you can start using it now. 
+```npm run dev```
 
 
 ### IMPORTANT NOTES ! 
